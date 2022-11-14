@@ -99,13 +99,12 @@ void add_one(char* rev){
     for (int i = strlen(rev)-1; i>=0; i--)
     {
         if(rev[i] == '0'){
+            rev[i] = '1';
             break;
         }else{
-            rev[i] = '1';
+            rev[i] = '0';
         }
-    }
-    rev[strlen(rev)-1] = '1';
-    
+    }    
 }
 void stringasbinary(char* s, char* output)
 {
@@ -116,20 +115,29 @@ void stringasbinary(char* s, char* output)
     printf("reverse: %s\n", reverse);
     add_one(reverse);
     printf("reverse!!!: %s\n", reverse);
-    int num = (int)(*reverse);
-    int decimal_num = 0;
-    int base = 1;
-    int rem;
-    while (num > 0) {  
-        rem = num % 10; /* divide the binary number by 10 and store the remainder in rem variable. */  
-        decimal_num = decimal_num + rem * base;  
-        num = num / 10; // divide the number with quotient  
-        base = base * 2;  
-    }  
-    printf("decimal num: %d", decimal_num);
-    char out = decimal_num;
+    output = reverse;
+    // int num = (int)(*reverse);
+    // printf("num = %d", num);
+    int result = 0; 
+    while (*reverse)
+    {
+        result *= 2;
+        result += *reverse == '1' ? 1 : 0;
+        ++reverse;
+    }
+    // int decimal_num = 0;
+    // int base = 1;
+    // int rem;
+    // while (num > 0) {  
+    //     rem = num % 10; /* divide the binary number by 10 and store the remainder in rem variable. */  
+    //     decimal_num = decimal_num + rem * base;  
+    //     num = num / 10; // divide the number with quotient  
+    //     base = base * 2;  
+    // }  
+    printf("decimal num: %d\n", result);
+    char out = result;
     char* res = &out;
-    printf("output  %c", out);
+    printf("output  %s\n", res);
 }
 
 void encode_2(char * src, char * dst, int len){
@@ -152,7 +160,7 @@ void encode_2(char * src, char * dst, int len){
     // }
 }
 int main(){
-    char *c = "B";
+    char *c = " ";
     encode_2(c, c, 1);
     return 0;
 }
