@@ -34,6 +34,7 @@ int addOne(int x){
     while( x & m ){
         x = x ^ m;
         m <<= 1;
+        x++;
     }    
     // flip the rightmost 0 bit
     x = x ^ m;
@@ -77,26 +78,58 @@ char* itoa(int value, char* buffer, int base){
     if (value < 0 && base == 10) {
         buffer[i++] = '-';
     }
- 
+    buffer[i++] = '0';
     buffer[i] = '\0'; // null terminate string
- 
+    
     return reverse(buffer, 0, i - 1);
 }
-void stringasbinary(char* s, char * output)
-{
-    // A small 9 characters buffer we use to perform the conversion
-    // char output[20];
-    // Until the first character pointed by s is not a null character
-    // that indicates end of string...
-    while (*s)
-    {
-        int ascii = (int)(*s);
-        ascii = ~ascii;
-        ascii = addOne(ascii);
-        printf("%d\n", ascii);
-        itoa(ascii, output, 2);
-        s++;
+void convert_indexs(char* c){
+    int len = strlen(c);
+    while(len>0){
+        if ((*c) == '1'){
+            (*c) = '0';
+        }else{
+            (*c) = '1';
+        }
+        len--;
+        c++;
     }
+}
+void add_one(char* rev){
+    for (int i = strlen(rev)-1; i>=0; i--)
+    {
+        if(rev[i] == '0'){
+            break;
+        }else{
+            rev[i] = '1';
+        }
+    }
+    rev[strlen(rev)-1] = '1';
+    
+}
+void stringasbinary(char* s, char* output)
+{
+    int ascii = (int)(*s);
+    char* reverse = itoa(ascii, output, 2);
+    printf("reverse1: %s\n", reverse);
+    convert_indexs(reverse);
+    printf("reverse: %s\n", reverse);
+    add_one(reverse);
+    printf("reverse!!!: %s\n", reverse);
+    int num = (int)(*reverse);
+    int decimal_num = 0;
+    int base = 1;
+    int rem;
+    while (num > 0) {  
+        rem = num % 10; /* divide the binary number by 10 and store the remainder in rem variable. */  
+        decimal_num = decimal_num + rem * base;  
+        num = num / 10; // divide the number with quotient  
+        base = base * 2;  
+    }  
+    printf("decimal num: %d", decimal_num);
+    char out = decimal_num;
+    char* res = &out;
+    printf("output  %c", out);
 }
 
 void encode_2(char * src, char * dst, int len){
@@ -107,20 +140,19 @@ void encode_2(char * src, char * dst, int len){
     {
         stringasbinary(src, buffer);
         strncat(res, buffer, strlen(buffer));
-        strncat(res, "#", size);
         len--;
         src++;
     }
-    for (int i = 0; i < strlen(res); i++)
-    {
-        if (res[i] != '#')
-        {
-            printf("%c", res[i]);
-        }
-    }
+    // for (int i = 0; i < strlen(res); i++)
+    // {
+    //     if (res[i] != '#')
+    //     {
+    //         printf("%c", res[i]);
+    //     }
+    // }
 }
 int main(){
-    char *c = "A";
+    char *c = "B";
     encode_2(c, c, 1);
     return 0;
 }
