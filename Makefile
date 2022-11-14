@@ -10,6 +10,13 @@ cmp: cmp.o
 copy: copy.o 
 	$(CC) $(CFlags) -o $@  $^
 
+encode: codec1.c codec2.c
+	$(CC) $(CFlags) -o $@  $^
+
+decode: codec1.c codec2.c
+	$(CC) $(CFlags) -o $@  $^
+
+
 # SHARED LIB #
 codec1.so: codec1.o
 	$(CC) --shared -fPIC -g -pthread codec1.o -o codec1.so
