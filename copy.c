@@ -118,10 +118,10 @@ int main(int argc, char *argv[]) {
         {
             copy_helper_link(argv[1], argv[2]);
         }
-        // else // file is original
-        // {
-        //     printf("89");
-        // }
+        else // file is original
+        {
+            copy(argv[1], argv[2]);
+        }
     }
    
 }
