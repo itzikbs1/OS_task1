@@ -8,9 +8,9 @@
 #include<fcntl.h>
 
 
-
-
-
+/*
+copy from file_1 to file_2
+*/
 int copy_helper(char* fname1, char* fname2){
     
     char c1, c2;
@@ -51,6 +51,10 @@ int copy_helper(char* fname1, char* fname2){
     return 1;
 }
 
+/*
+copy a symbol link from a symbol link file to file_2
+*/
+
 int copy_helper_link(char* fname1, char* fname2){
 
     size_t *f1, *f2;
@@ -58,17 +62,14 @@ int copy_helper_link(char* fname1, char* fname2){
     
     int num= 0;
     int num_link;
-        // printf("22\n");
 
     num= readlink(fname1,c,sizeof(c)); 
-        // printf("%s", fname1);
 
     if(num == -1){
         printf("error2");            
         return -1;
     }
-    // printf("%s", c);
-    // printf("\n");
+ 
 
     num_link= symlink(c, fname2);
         printf("%s", fname2);
@@ -93,7 +94,7 @@ void copy(char * fname1, char * fname2){
         printf("Error openning files\n");
     }
     if(ans == 1){
-        printf("file is copied\n");
+        printf("file is copied!\n");
     }
 }
 
