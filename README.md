@@ -20,14 +20,14 @@ We implemented each file for each question:
 If you put _-l_ and the files are normal files, a normal copy of the file's contents. If the file is a link symbol then copying is done.
 If you don't put -l the copy is a normal copy of the file contents.
 
- __How to run__:
+ ***_How to run_***:
  
  copy contents of file_1 to file_2:
  
   ```
   ./copy -l file_1 file_2 
   ```
-  __or__
+  ***_or_***
   
    ```
   ./copy file_1 file_2
