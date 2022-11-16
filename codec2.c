@@ -129,31 +129,36 @@ void encode(char * src, char * dst, int len){
 void decode(char * src, char * dst, int len){
     char c[len];
     int idx=0;
-    while (len)
+    while (len>=0)
     {
-        if((*src) == "#"){
-            printf("135");
-            int ascii = (int)(*c);
+        // printf("src = %c\n", (*c));
+
+        if((*src) == '#'){
+            // printf("135");
+            // int ascii = (int)(*c);
             char buffer[20];
             char res[100];
 
-            stringasbinary(src, buffer, 0);
+            stringasbinary(c, buffer, 0);
             strncat(res, buffer, strlen(buffer));
             // strncat(res, '#', 1);
             // src++;
         }else{
-            printf("idx = %d", idx);
+            // printf("idx = %d\n", idx);
             c[idx] = (*src);
             idx++;
+
         }
         len--;
+
         src++;
     }
 }
+
 int main(){
     char *c = " ";
     encode(c, c, 1);
     char* b = "``#";
-    decode(b,b,1);
+    decode(b,b,strlen(b)-1);
     return 0;
 }
