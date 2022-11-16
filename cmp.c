@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/*
+compare file program
+*/
 int cmp_helper (char* fname1, char* fname2){
 
     FILE *f1 , *f2;

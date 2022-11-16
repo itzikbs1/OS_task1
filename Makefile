@@ -1,21 +1,21 @@
 CC=gcc -fPIC -g -w
 
-all: cmp copy codec1.so codec2.so
+all: cmp copy encode decode codec1.so codec2.so
 
 # Q1 #
 cmp: cmp.o 
 	$(CC) $(CFlags) -o $@  $^
 
-# Q2 #
+# Q2 + Q3#
 copy: copy.o 
 	$(CC) $(CFlags) -o $@  $^
 
-encode: codec1.c codec2.c
+# Q4 A #
+encode: encode.o
 	$(CC) $(CFlags) -o $@  $^
-
-decode: codec1.c codec2.c
+# Q4 B #
+decode: decode.o
 	$(CC) $(CFlags) -o $@  $^
-
 
 # SHARED LIB #
 codec1.so: codec1.o
@@ -30,4 +30,4 @@ codec2.so: codec2.o
 	$(CC) $(CFlags) -c -o $@  $^ 
 
 clean:
-	rm -f *.dSYM *.o cmp copy codec1.so codec2.so
+	rm -f *.dSYM *.o cmp copy encode decode codec1.so codec2.so

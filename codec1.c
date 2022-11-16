@@ -2,6 +2,9 @@
 #include <stdlib.h>
 #include <string.h>
 
+/*
+Encoder converts uppercase chars to lowercase and vise versa.
+*/
 void encode(char * src, char * dst, int len){
     
     int i = 0;
@@ -27,6 +30,9 @@ void encode(char * src, char * dst, int len){
     printf("%s" , "\n");
 }
 
+/*
+decode to the original string
+*/
 void decode(char * src, char * dst, int len){
     
     int i = 0;
