@@ -20,14 +20,14 @@ We implemented each file for each question:
 If you put _-l_ and the files are normal files, a normal copy of the file's contents. If the file is a link symbol then copying is done.
 If you don't put -l the copy is a normal copy of the file contents.
 
- ***_How to run_***:
+ ***How to run***:
  
  copy contents of file_1 to file_2:
  
   ```
   ./copy -l file_1 file_2 
   ```
-  ***_or_***
+  ***or***
   
    ```
   ./copy file_1 file_2
@@ -47,7 +47,7 @@ If you don't put -l the copy is a normal copy of the file contents.
 
 •	**_`codec1.c:`_** Implementation of the encode and decode functions which transfer the string from lowercase to uppercase and vice versa.
 
-__How to run__:
+***How to run***:
 
 if encode:
 
@@ -64,7 +64,7 @@ if decode:
 
 •	**_`codec2.c:`_**
 
-__How to run__:
+***How to run***:
 
 if encode:
 
