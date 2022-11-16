@@ -24,18 +24,20 @@ If you don't put -l the copy is a normal copy of the file contents.
  
  copy contents of file_1 to file_2:
  
-   ```
+  ```
   ./copy -l file_1 file_2 
   ```
   __or__
   
    ```
-  ./copy file_1 file_2 
+  ./copy file_1 file_2
+  
   ```
   copy symbol link to file_2 (if file1link is a symbol link) :
   
-    ```
+  ```
   ./copy -l file1link file_2 
+  
   ```
   
 
