@@ -27,6 +27,17 @@ If you don't put -l the copy is a normal copy of the file contents.
    ```
   ./copy -l file_1 file_2 
   ```
+  __or__
+  
+   ```
+  ./copy file_1 file_2 
+  ```
+  copy symbol link to file_2 (if file1link is a symbol link) :
+  
+    ```
+  ./copy -l file1link file_2 
+  ```
+  
 
 •	**_`encode.c:`_** The implementation of the 'main' which links the various encode functions.
 
