@@ -8,10 +8,25 @@ These are the solutions for assignment 1 in the operating systems courese in C l
 We implemented each file for each question:
 
 •	**_`cmp.c:`_** Implementation of the function which compares the files.
-How to run:
+
+ __How to run__:
+ 
+   ```
+  ./cmp file_1 file_2
+  ```
 
 •	**_`copy.c:`_** Implementation of the function that copies between one file and the other.
-How to run:
+
+If you put _-l_ and the files are normal files, a normal copy of the file's contents. If the file is a link symbol then copying is done.
+If you don't put -l the copy is a normal copy of the file contents.
+
+ __How to run__:
+ 
+ copy contents of file_1 to file_2:
+ 
+   ```
+  ./copy -l file_1 file_2 
+  ```
 
 •	**_`encode.c:`_** The implementation of the 'main' which links the various encode functions.
 
