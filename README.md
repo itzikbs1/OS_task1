@@ -46,8 +46,37 @@ If you don't put -l the copy is a normal copy of the file contents.
 •	**_`decode.c:`_** The implementation of the 'main' which links the various decode functions.
 
 •	**_`codec1.c:`_** Implementation of the encode and decode functions which transfer the string from lowercase to uppercase and vice versa.
-How to run:
+
+__How to run__:
+
+if encode:
+
+   ```
+  ./encode codec1 "gal and itzik"
+  
+  ```
+if decode:
+
+   ```
+./decode codec1 "gal and itzik"
+  
+  ```
 
 •	**_`codec2.c:`_**
+
+__How to run__:
+
+if encode:
+
+   ```
+  ./encode codec2 "ANC"
+  
+  ```
+if decode:
+
+   ```
+./decode codec2 "a"
+  
+  ```
 
 •	**_`codec.h:`_** Concentration of the details of the functions for codec2.c and codec1.c files
