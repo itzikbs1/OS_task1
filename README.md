@@ -29,10 +29,10 @@ If you don't put -l the copy is a normal copy of the file contents.
   ```
    **or**
 
-    ```
-   ./copy file_1 file_2
-
-   ```
+  ```
+  ./copy file_1 file_2
+  ```
+  
     copy symbol link to file_2 (if file1link is a symbol link) :
 
    ```
