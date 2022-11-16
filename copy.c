@@ -99,7 +99,7 @@ void copy(char * fname1, char * fname2){
         printf("Error openning files\n");
     }
     if(ans == 1){
-        printf("file is copied!!!!\n");
+        printf("file is copied!\n");
     }
 }
 
