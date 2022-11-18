@@ -17,8 +17,8 @@ int copy_helper(char* fname1, char* fname2){
     char buff[20];
     int idx=0;
 
-    int f1 = open(fname1, O_RDONLY);
-    int f2 = open(fname2, O_WRONLY);
+    int f1 = open(fname1, O_RDONLY | O_CREAT, S_IRWXU);
+    int f2 = open(fname2, O_WRONLY | O_TRUNC | O_CREAT, S_IRWXU);
           
     if (f1 ==-1 || f2 == -1){
         printf("error22");
@@ -27,30 +27,30 @@ int copy_helper(char* fname1, char* fname2){
 
     int r_f1;
     int w_f2;
-    r_f1 = read(f1, &c1, 1);
-    if (r_f1 == -1){
-        perror("cannot read from the file");
-        return -1;
-    }
+    r_f1= read(f1, &c1, 1);
+        if (r_f1 == -1){
+            perror("c8");
+            return -1;
+        }
     do{
+
         w_f2 = write(f2,&c1, 1);
         if (w_f2 == -1){
-            perror("cannot write to the file");
+            perror("c7");
             return -1;
         }
-
-        r_f1 = read(f1, &c1, 1);
+        r_f1= read(f1, &c1, 1);
         if (r_f1 == -1){
-            perror("cannot read from the file");
+            perror("c8");
             return -1;
         }
-    }while(r_f1 != 0 && w_f2 != 0);
+    }while(r_f1 !=0 && w_f2 != 0);
 
     int c_f1 = close(f1);
     int c_f2 = close(f2);
 
     if (c_f1 == -1 || c_f2 == -1){
-        perror("cannot close the files");
+        perror("c1");
         exit(1);
     }
     return 1;
@@ -62,31 +62,39 @@ copy a symbol link from a symbol link file to file_2
 
 int copy_helper_link(char* fname1, char* fname2){
 
-    size_t *f1, *f2;
-    char c[30];
+    char c[256];
     
     int num= 0;
     int num_link;
 
-    num= readlink(fname1,c,sizeof(c)); 
+    num= readlink(fname1,&c,sizeof(c)); 
 
     if(num == -1){
         printf("error2");            
         return -1;
     }
- 
+    
+    int f2 = open(fname2, O_WRONLY | O_CREAT , S_IRWXU);
+    if(f2 == -1){
+        printf("error cannot open file");
+        return -1;
+    }
+    
 
-    num_link= symlink(c, fname2);
+    num_link = write(f2, &c, strlen(c));
+    // num_link= symlink(c, fname2);
         // printf("%s", fname2);
 
     if(num_link == -1){
         printf("error333");
-        perror("symlink() error");
+        perror("write() error");
 
         return -1;
     }
-
-
+    int c_f2 = close(f2);
+    if (c_f2 == -1){
+        perror("cannot close the file");
+    }
     printf("file is copied\n");
     return 1;
 
@@ -128,6 +136,5 @@ int main(int argc, char *argv[]) {
         {
             copy(argv[1], argv[2]);
         }
-    }
-   
+    }  
 }

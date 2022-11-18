@@ -154,3 +154,11 @@ void decode_2(char * src, char * dst, int len){
         src++;
     }
 }
+
+// int main(){
+//     char *c = " ";
+//     encode(c, c, 1);
+//     char* b = "``#";
+//     decode(b,b,strlen(b)-1);
+//     return 0;
+// }

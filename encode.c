@@ -7,14 +7,13 @@
 
 int main(int argc, char *argv[]) {
 
-    if(strcmp(argv[1] ,"codec1") == 0){
+    if( strcmp(argv[1] ,"codec1") == 0){
         encode(argv[2], argv[2], strlen(argv[2]));
     }
 
     if(strcmp(argv[1] ,"codec2") == 0){
         encode_2(argv[2], argv[2], strlen(argv[2]));
     }
-    return 0;
-}
 
+}
 

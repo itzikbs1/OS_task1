@@ -22,6 +22,10 @@ void encode(char * src, char * dst, int len){
                 len--;
             }
         }
+        else{
+            i++;
+            len--;
+        }
     }
 
     for (int j= 0; j<i; j++){
@@ -49,6 +53,10 @@ void decode(char * src, char * dst, int len){
                 i++;
                 len--;
             }
+        }
+        else{
+            i++;
+            len--;
         }
     }
 
