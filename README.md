@@ -11,7 +11,7 @@ We implemented each file for each question:
 
    **How to run**:
 
-     ```
+    ```
     ./cmp file_1 file_2
     ```
 
