@@ -57,6 +57,8 @@ copy symbol link to file_2 (if file1link is a symbol link) - Question 3:
    
    ![copylink](https://user-images.githubusercontent.com/92460450/202904872-f571a81a-4a0b-40d0-b354-90dd2f21bf74.jpg)
 
+![copylink2](https://user-images.githubusercontent.com/92460450/202905008-34c5b40c-9605-4433-b5ad-be0b7712c5cf.jpg)
+
    
    
 As a result of this run, the file file_2 will have the name of the file to which the link symbol points.
