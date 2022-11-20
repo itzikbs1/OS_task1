@@ -7,7 +7,7 @@ These are the solutions for assignment 1 in the operating systems courese in C l
 ## Introduction : 
 We implemented each file for each question:
 
-•	**_`cmp.c:`_** Implementation of the function which compares the files.
+•	**_`cmp.c:`_** Implementation of the function which compares the files - Question 1.
 
    **How to run**:
 
@@ -22,7 +22,7 @@ If you don't put -l the copy is a normal copy of the file contents.
 
 **How to run**:
 
- copy contents of file_1 to file_2:
+ copy contents of file_1 to file_2 - Question 2:
 
   ```
   ./copy -l file_1 file_2 
@@ -33,18 +33,20 @@ If you don't put -l the copy is a normal copy of the file contents.
   ./copy file_1 file_2
   ```
   
-copy symbol link to file_2 (if file1link is a symbol link) :
+copy symbol link to file_2 (if file1link is a symbol link) - Question 3:
 
    ```
   ./copy file1link file_2 
    ```
+   
+As a result of this run, the file file_2 will have the name of the file to which the link symbol points.
 
 
 •	**_`encode.c:`_** The implementation of the 'main' which links the various encode functions.
 
 •	**_`decode.c:`_** The implementation of the 'main' which links the various decode functions.
 
-•	**_`codec1.c:`_** Implementation of the encode and decode functions which transfer the string from lowercase to uppercase and vice versa.
+•	**_`codec1.c:`_** Implementation of the encode and decode functions which transfer the string from lowercase to uppercase and vice versa - Question 4a.
 
 
 **How to run**:
@@ -61,7 +63,7 @@ if decode:
 ./decode codec1 "gal and itzik"
 ```
 
-•	**_`codec2.c:`_**
+•	**_`codec2.c:`_** - Question 4b 
 
 **How to run**:
 
