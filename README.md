@@ -37,6 +37,17 @@ If you don't put -l the copy is a normal copy of the file contents.
   ./copy file_1 file_2
   ```
   
+  Before :
+  
+  ![copy](https://user-images.githubusercontent.com/92460450/202904601-2f81bc02-469e-4c94-9560-4a9b13dfbf87.jpg)
+
+  After :
+  ![copy2](https://user-images.githubusercontent.com/92460450/202904646-a4cd9bc3-00e8-4524-bd6d-42f22c3a62c6.jpg)
+
+![copy1](https://user-images.githubusercontent.com/92460450/202904692-254f9bed-c245-4dc6-b7d1-8d78ef7935e1.jpg)
+
+  
+  
 copy symbol link to file_2 (if file1link is a symbol link) - Question 3:
 
    ```
