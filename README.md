@@ -36,7 +36,7 @@ If you don't put -l the copy is a normal copy of the file contents.
 copy symbol link to file_2 (if file1link is a symbol link) :
 
    ```
-  ./copy -l file1link file_2 
+  ./copy file1link file_2 
    ```
 
 
