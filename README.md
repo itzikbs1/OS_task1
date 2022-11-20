@@ -14,6 +14,10 @@ We implemented each file for each question:
    ```
     ./cmp file_1 file_2
    ```
+   ![צילום מסך 2022-11-20 152238](https://user-images.githubusercontent.com/92460450/202904453-e2ced6ee-ebdf-4db9-a083-0e7b0a8f4e3f.jpg)
+
+   ![צילום מסך 2022-11-20 152153](https://user-images.githubusercontent.com/92460450/202904478-135f2db5-ca69-4a3e-8e7c-5bab0f96e90f.jpg)
+
 
 •	**_`copy.c:`_** Implementation of the function that copies between one file and the other.
 
