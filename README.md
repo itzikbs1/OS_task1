@@ -11,9 +11,9 @@ We implemented each file for each question:
 
    **How to run**:
 
-    ```
+   ```
     ./cmp file_1 file_2
-    ```
+   ```
 
 •	**_`copy.c:`_** Implementation of the function that copies between one file and the other.
 
