@@ -83,11 +83,14 @@ if encode:
   ./encode codec1 "gal and itzik"
 
   ```
+  ![code1 encode](https://user-images.githubusercontent.com/92460446/203022321-a084f31f-6acb-48ab-8501-4a0b0a85c1e0.png)
+  
 if decode:
 
 ```
 ./decode codec1 "gal and itzik"
 ```
+![code1 decode](https://user-images.githubusercontent.com/92460446/203022371-77dcc353-6c38-43b0-af84-ead0f65d2c10.png)
 
 •	**_`codec2.c:`_** - Question 4b 
 
