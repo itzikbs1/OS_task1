@@ -19,6 +19,10 @@ We implemented each file for each question:
    ![צילום מסך 2022-11-20 152153](https://user-images.githubusercontent.com/92460450/202904478-135f2db5-ca69-4a3e-8e7c-5bab0f96e90f.jpg)
 
 
+  ![file1](https://user-images.githubusercontent.com/92460446/203021246-9f95d146-b19a-4939-af08-4138911f172c.png)
+  ![file2](https://user-images.githubusercontent.com/92460446/203021300-5ca4eff6-1915-4860-92d5-512e0ce944c9.png)
+  ![cmp NotIdentical](https://user-images.githubusercontent.com/92460446/203021333-e4dbc54a-36a4-4c3c-b7e9-3d9c4d32a0ee.png)
+
 •	**_`copy.c:`_** Implementation of the function that copies between one file and the other.
 
 If you put _-l_ and the files are normal files, a normal copy of the file's contents. If the file is a link symbol then copying is done.
