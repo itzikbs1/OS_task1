@@ -119,22 +119,22 @@ int main(int argc, char *argv[]) {
     int opt = getopt(argc, argv, "l");
     if (opt != -1) // there is '-l', copy link contents
     {
-        copy(argv[2], argv[3]);
-    }
-    else // there is no '-l'
-    {
-        if (lstat(argv[1], &buf) == -1) // get file's stats
+        if (lstat(argv[2], &buf) == -1) // get file's stats
         {
             perror("Error");
             exit(-1);
         }
         if (S_ISLNK(buf.st_mode)) // if file is a symbolic link
         {
-            copy_helper_link(argv[1], argv[2]);
+            copy_helper_link(argv[2], argv[3]);
         }
         else // file is original
         {
-            copy(argv[1], argv[2]);
+            copy(argv[2], argv[3]);
         }
+    }
+    else // there is no '-l'
+    {
+        copy(argv[1], argv[2]);
     }  
 }
